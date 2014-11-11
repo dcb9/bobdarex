@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\EntryForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -22,7 +23,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error', 'say', 'entry'],
                         'allow' => true,
                     ],
                     [
@@ -79,5 +80,19 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionSay($message="hello"){
+        return $this->render('say', ['message'=>$message]);
+    }
+
+    public function actionEntry(){
+        $model = new EntryForm;
+        if($model->load(Yii::$app->request->post()) && $model->validate()){
+
+            return $this->render('entry-confirm', ['model'=>$model]);
+        }else{
+            return $this->render('entry', ['model'=>$model]);
+        }
     }
 }

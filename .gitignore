@@ -21,6 +21,8 @@ Thumbs.db
 # Mac DS_Store Files
 .DS_Store
 
+runtime
+
 # phpunit itself is not needed
 # local phpunit config
 /phpunit.xml
