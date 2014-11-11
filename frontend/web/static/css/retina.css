@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/**
+ * iDX
+ * @authors Vee (542033800@qq.com)
+ * @date    2014-07-19 
+ * @version 0.1
+ */
+/* ------------- Retina ------------- */
+@media only screen and (-o-min-device-pixel-ratio: 2/1), /* Opera */
+       only screen and (min--moz-device-pixel-ratio: 2), /* Firefox 16 之前 */
+       only screen and (-webkit-min-device-pixel-ratio: 2), /* Webkit */
+       only screen and (min-resolution: 240dpi), /* 标准 */
+       only screen and (min-resolution: 2dppx) /* 标准 */
+{
+	header nav a.logo{
+		background: url(../images/iDX@2x.png) center center no-repeat;
+	    background-size: 119px 36px;
+	}	
+	header .myspace em{
+		background: url(../images/clickme@2x.png) no-repeat;
+		background-size:100%; 
+	}
+	.myfollow a i{
+		background: url(../images/sprite@2x.png) 0 -215px no-repeat;
+	    background-size: 310px 250px;
+	}
+	.mylike a i{
+		background: url(../images/sprite@2x.png) -57px -215px no-repeat;
+	    background-size: 310px 250px;
+	}
+	.myplaylist a i{
+		background: url(../images/sprite@2x.png) -168px -215px no-repeat;
+	    background-size: 310px 250px;
+	}
+	.myhistory a i{
+		background: url(../images/sprite@2x.png) -110px -215px no-repeat;
+	    background-size: 310px 250px;
+	}
+	.myweibo a i{
+		background: url(../images/sprite@2x.png) -257px -170px no-repeat;
+	    background-size: 310px 250px;
+	}
+	.myweixin a i{
+		background: url(../images/sprite@2x.png) -226px -170px no-repeat;
+	    background-size: 310px 250px;
+	}
+	.mylogout a i{
+		background: url(../images/sprite@2x.png) -198px -170px no-repeat;
+	    background-size: 310px 250px;
+	}
+	.banner_top .banner_prev{
+		background: url(../images/sprite@2x.png) 0 0 no-repeat;
+	    background-size: 310px 250px;
+	}
+	.banner_top .banner_next{
+		background: url(../images/sprite@2x.png) -25px 0 no-repeat;
+		background-size: 310px 250px;
+	}
+	.rotate_nav a{
+		background: url(../images/sprite@2x.png) -62px -34px no-repeat;
+		background-size: 310px 250px;
+	}
+	.rotate_nav a:hover,.rotate_nav a.sel{
+		background: url(../images/sprite@2x.png) -72px -34px no-repeat;
+		background-size: 310px 250px;
+	}
+	.street_videos li.follow a i{
+		background: url(../images/sprite@2x.png) -135px 0 no-repeat;
+	    background-size: 310px 250px;
+	}
+	.street_videos li a.video_ad i{
+		background: url(../images/sprite@2x.png) -211px -203px no-repeat;
+		background-size: 310px 250px;
+	}
+	.street_videos li a.video_ad:hover i{
+		background: url(../images/sprite@2x.png) -259px -203px no-repeat;
+		background-size: 310px 250px;
+	}
+	.playtimes i{
+		background: url(../images/sprite@2x.png) -93px 0 no-repeat;
+		background-size: 310px 250px;
+	}
+	.like i{
+		background: url(../images/sprite@2x.png) -90px -16px no-repeat;
+		background-size: 310px 250px;
+	}
+	.like.video_liked i{
+		background: url(../images/sprite@2x.png) -163px -165px no-repeat;
+		background-size: 310px 250px;
+	}
+	.playlater i{
+		background: url(../images/sprite@2x.png) -92px -34px no-repeat;
+		background-size: 310px 250px;
+	}
+	.play i{
+		background: url(../images/sprite@2x.png) -56px 0 no-repeat;
+		background-size: 310px 250px;
+	}
+	.pagination a.current{
+		background: url(../images/sprite@2x.png) -135px -30px no-repeat;
+		background-size: 310px 250px;
+	}
+	.pagination a.prev{
+		background: url(../images/sprite@2x.png) -111px 0 no-repeat;
+		background-size: 310px 250px;
+	}
+	.pagination a.next{
+		background: url(../images/sprite@2x.png) -111px -25px no-repeat;
+		background-size: 310px 250px;
+	}
+	.video_play i{
+		background: url(../images/sprite@2x.png) -191px 0px no-repeat;
+		background-size:  310px 250px;
+	}
+	.video_play:hover i {
+		width: 114px;
+		height: 82px;
+		background-position: -191px -81px;
+	}
+	.tag_rule i{
+		background: url(../images/sprite@2x.png) -118px -120px no-repeat;
+		background-size:  310px 250px;
+	}
+	.jiathis_style_32x32 a{
+		background:url(../images/sprite@2x.png) no-repeat !important;
+		background-size:  310px 250px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_tsina{
+		width: 24px !important;
+		height: 21px !important;
+		background-position: -64px -92px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_tsina:hover{
+		background-position: -100px -92px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_weixin{
+		width: 26px !important;
+		height: 21px !important;
+		background-position: -64px -70px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_weixin:hover{
+		background-position: -100px -70px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_douban{
+		width: 18px !important;
+		height: 18px !important;
+		background-position: -137px -95px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_douban:hover{
+		background-position: -161px -95px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_qzone{
+		width: 24px !important;
+		height: 22px !important;
+		background-position: -137px -48px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_qzone:hover{
+		background-position: -162px -48px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_tqq{
+		width: 25px !important;
+		height: 23px !important;
+		background-position: -137px -70px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_tqq:hover{
+		background-position: -162px -70px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_renren{
+		width: 35px !important;
+		height: 21px !important;
+		background-position: -65px -49px !important;
+	}
+	.jiathis_style_32x32 .jiathis_button_renren:hover{
+		background-position:-101px -48px !important;
+	}
+	
+	.share_video .video_like i{
+		background:url(../images/sprite@2x.png) -165px 0px no-repeat;
+		background-size:  310px 250px;
+	}
+	.share_video .video_liked i{
+		background-position: -165px -20px;
+	}
+	.comment_form input[type="submit"]{
+		background: url(../images/sprite@2x.png) -65px -146px no-repeat;
+		background-size:  310px 250px;
+	}
+	.comment_form input[type="submit"]:hover{
+		background-position: -65px -112px;
+	}	
+	.video_recommend dd .play_later i{
+		background: url(../images/sprite@2x.png) -85px -121px no-repeat;
+		background-size:  310px 250px;
+	}
+	.video_recommend dd .play_later i{
+		background: url(../images/sprite@2x.png) -85px -121px no-repeat;
+		background-size:  310px 250px;
+	}
+	.video_recommend dd .play_later.video_liked i{
+		background-position:-147px -121px !important;
+	}
+	.tag_console .tag_create em{
+		background: url(../images/tag_arrow@2x.png) no-repeat;
+		background-size: 10px 5px;
+	}
+	.tag_points .point{
+		background: url(../images/tag_dot@2x.png) 0 0 no-repeat;
+		background-size:41px 160px;
+	}
+	.tag_x{
+		background:url(../images/tag_x@2x.png) no-repeat;
+		background-size:12px 18px;
+	}
+}
