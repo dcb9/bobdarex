@@ -33,7 +33,7 @@ return [
             'backend/web/assets',
             'frontend/runtime',
             'frontend/web/assets',
-	    'weixin/web/runtime',
+            'weixin/runtime',
             'weixin/web/assets',
         ],
         'setExecutable' => [
@@ -52,7 +52,7 @@ return [
             'backend/web/assets',
             'frontend/runtime',
             'frontend/web/assets',
-	    'weixin/web/runtime',
+            'weixin/runtime',
             'weixin/web/assets',
         ],
         'setExecutable' => [
