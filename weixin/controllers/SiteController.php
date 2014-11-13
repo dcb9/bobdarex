@@ -13,7 +13,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         # return $this->render('index');
-	return "what";
+	    return "what";
     }
 
     public function actionLogin()
