@@ -10,6 +10,9 @@ use weixin\models\Weixin;
  */
 class SiteController extends Controller
 {
+
+    public $enableCsrfValidation = false;
+
     public function actionIndex()
     {
         $model = new Weixin;

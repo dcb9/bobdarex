@@ -23,14 +23,13 @@ class Weixin extends Model{
             $toUsername = $postObj->ToUserName;
             $keyword = trim($postObj->Content);
             $time = time();
-            $textTpl = "<xml>
+            $textTpl = '<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
 							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%s</CreateTime>
+							<CreateTime>%d</CreateTime>
 							<MsgType><![CDATA[%s]]></MsgType>
 							<Content><![CDATA[%s]]></Content>
-							<FuncFlag>0</FuncFlag>
-							</xml>";
+							</xml>';
             if(!empty( $keyword )) {
                 // 如果用户有输入内容，则我们就回复。
                 $msgType = "text";
@@ -61,15 +60,16 @@ class Weixin extends Model{
     /**
      * 生成Signature的方法，这个应该和微信那里的算法是一致的，这样才能得到相同的结果。
      *
-     * @param $timestamp 微信那边传过来的时间戳
-     * @param $nonce
-     * @param string|微信后台设置的token值 $token 微信后台设置的token值
+     * @param int $timestamp 微信那边传过来的时间戳
+     * @param string $nonce
+     * @param string $token 微信后台设置的token值 $token 微信后台设置的token值
      * @return string
      */
     private function _generatorSignature($timestamp, $nonce, $token = self::TOKEN){
-
         $tmpArr = array($token, $timestamp, $nonce);
         sort($tmpArr, SORT_STRING);
-        return sha1(implode($tmpArr));
+        $tmpStr = implode($tmpArr);
+        $tmpStr =sha1($tmpStr);
+        return $tmpStr;
     }
 }
