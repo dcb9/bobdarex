@@ -12,7 +12,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         // url: weixin.bobdarex.phpor.me/site 或 weixin.bobdarex.phpor.me
-	    return "site/index";
+        return Yii::$app->request->get('echostr');
     }
     public function actionBob(){
         // url: weixin.bobdarex.phpor.me/site/bob
