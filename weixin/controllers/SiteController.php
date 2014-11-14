@@ -19,7 +19,23 @@ class SiteController extends Controller
         if(!$model->checkSignature())
             exit("check signature error.");
 
-        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-        return $model->responseMsg($postStr);
+        if($postStr = $GLOBALS["HTTP_RAW_POST_DATA"]) {
+
+            $postObject = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+            $model->setPostObject($postObject);
+
+            switch($postObject->MsgType){
+                case 'event':
+                    return $model->getWelcomeContent();
+                    break;
+                case 'text':
+                default:
+                    return $model->getMusicContent();
+                    break;
+            }
+
+        }else{
+            return "";
+        }
     }
 }
