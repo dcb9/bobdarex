@@ -11,7 +11,7 @@ class SiteController extends Controller
 {
     public function actionIndex()
     {
-        // url: weixin.bobdarex.phpor.me/site »ò weixin.bobdarex.phpor.me
+        // url: weixin.bobdarex.phpor.me/site æˆ– weixin.bobdarex.phpor.me
 	    return "site/index";
     }
     public function actionBob(){
@@ -20,6 +20,6 @@ class SiteController extends Controller
     }
     public function actionBobTest(){
         // url: weixin.bobdarex.phpor.me/site/bob-test
-        return 'site/bob-test¡£¡£¡£¡£¡£';
+        return 'site/bob-testã€‚ã€‚ã€‚ã€‚ã€‚';
     }
 }
