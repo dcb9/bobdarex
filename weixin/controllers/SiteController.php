@@ -2,7 +2,6 @@
 namespace weixin\controllers;
 
 use Yii;
-use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
 /**
@@ -21,6 +20,6 @@ class SiteController extends Controller
     }
     public function actionBobTest(){
         // url: weixin.bobdarex.phpor.me/site/bob-test
-        return 'site/bob-test';
+        return 'site/bob-test。。。。。';
     }
 }
