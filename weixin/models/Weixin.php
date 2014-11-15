@@ -14,7 +14,6 @@ use yii\base\Model;
 
 class Weixin extends Model{
     const TOKEN = "bobdarex";
-    const ENCODING_AES_KEY = "T9FwIpxZpTg3M058qeBXZVXJgIJbn7JUj0HaU9ntVlP";
     protected  $postObject = null;
 
 
