@@ -11,6 +11,7 @@ namespace weixin\models;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\base\Model;
+use weixin\component\MyXmlResponseFormatter as MXRF;
 
 class Weixin extends Model{
     const TOKEN = "bobdarex";
@@ -32,20 +33,7 @@ class Weixin extends Model{
      */
     public function getMusicContent() {
         $postObj = $this->postObject;
-        $ret = "<xml>
-            <ToUserName><![CDATA[%s]]></ToUserName>
-            <FromUserName><![CDATA[%s]]></FromUserName>
-            <CreateTime>%s</CreateTime>
-            <MsgType><![CDATA[%s]]></MsgType>
-            <Music>
-            <Title><![CDATA[%s]]></Title>
-            <Description><![CDATA[]]></Description>
-            <MusicUrl><![CDATA[%s]]></MusicUrl>
-            <HQMusicUrl><![CDATA[%s]]></HQMusicUrl>
-            <FuncFlag><![CDATA[1]]></FuncFlag>
-            </Music>
-            </xml>";
-        $recognition = $postObj->Content;
+        $recognition = (string)$postObj->Content;
         //判断格式是否为歌名+明星
         if (strstr($recognition, " ")) {
             $strArray = explode(" ", $recognition);
@@ -64,8 +52,8 @@ class Weixin extends Model{
             return $this->getTextContent($postObj);
         }
         foreach ($musicobj->url as $itemobj) {
-            $encode = $itemobj->encode;
-            $decode = $itemobj->decode;
+            $encode = (string)$itemobj->encode;
+            $decode = (string)$itemobj->decode;
             $removedecode = end(explode('&', $decode));
             if ($removedecode <> "") {
                 $removedecode = "&" . $removedecode;
@@ -74,11 +62,20 @@ class Weixin extends Model{
             $musicurl = str_replace(end(explode('/', $encode)), $decode, $encode);
             break;
         }
-        $resultStr = sprintf($ret, $postObj->FromUserName, $postObj->ToUserName, time(), 'music', $recognition, $decode, $musicurl, $musicurl);
-        return $resultStr;
+
+        return [
+            "ToUserName"=>[$postObj->FromUserName,MXRF::CDATA=>true],
+            "FromUserName"=>[$postObj->ToUserName,MXRF::CDATA=>true],
+            "CreateTime"=>time(),
+            "MsgType"=>"music",
+            "Music"=>[
+                "Title"=>[$recognition,MXRF::CDATA=>true],
+                "Description"=>[$decode,MXRF::CDATA=>true],
+                "MusicUrl"=>[$musicurl,MXRF::CDATA=>true],
+                "HQMusicUrl"=>[$musicurl,MXRF::CDATA=>true],
+            ]
+        ];
     }
-
-
     /**
      *  获取返回数据，响应文字流
      * @param resource $postObj 微信推送过来的数据对象
@@ -86,13 +83,6 @@ class Weixin extends Model{
      */
     public function getTextContent() {
         $postObj = $this->postObject;
-        $ret = "<xml>
-                <ToUserName><![CDATA[%s]]></ToUserName>
-                <FromUserName><![CDATA[%s]]></FromUserName>
-                <CreateTime>%s</CreateTime>
-                <MsgType><![CDATA[%s]]></MsgType>
-                <Content><![CDATA[%s]]></Content>
-                </xml>";
         $MsgType = 'text'; //回复类型
         $GetMsg = $postObj->Content; //用户发送的内容
         //如果输入的是以下文字，后期会进行其他处理，目前还没做。
@@ -102,26 +92,30 @@ class Weixin extends Model{
         } else {
             $RetMsg = '亲，如果您是点歌，那么很遗憾没有找到您点的歌，请确认后再次点歌。如果您是来逗我的话，对不起，我宁死不从。我也是有贞操的。';
         }
-        $resultStr = sprintf($ret, $postObj->FromUserName, $postObj->ToUserName, time(), $MsgType, $RetMsg);
-        return $resultStr;
+
+        return [
+            "ToUserName"=>[$postObj->FromUserName, MXRF::CDATA=>true],
+            "FromUserName"=>[$postObj->ToUserName, MXRF::CDATA=>true],
+            "CreateTime"=>time(),
+            "MsgType"=>[$MsgType, MXRF::CDATA=>true],
+            "Content"=>[$RetMsg, MXRF::CDATA=>true],
+        ];
     }
 
     public function getWelcomeContent(){
         if($this->postObject->Event=="subscribe") {
-            $textTpl = '<xml>
-							<ToUserName><![CDATA[%s]]></ToUserName>
-							<FromUserName><![CDATA[%s]]></FromUserName>
-							<CreateTime>%d</CreateTime>
-							<MsgType><![CDATA[%s]]></MsgType>
-							<Content><![CDATA[%s]]></Content>
-							</xml>';
 
-            $MsgType = 'text';
             $Content = '欢迎关注PHP技术文章,本公众号会不定时分享PHP相关技术性文章。当然，无聊也开发了一些小功能，目前可用的是点歌功能，输入歌名或歌名[空格]歌星，即可点歌。个人网站：www.yelongyi.com';
-            return sprintf($textTpl, $this->postObj->FromUserName, $this->postObj->ToUserName, time(), $MsgType, $Content);
+            return [
+                "ToUserName"=>[$this->postObj->FromUserName, MXRF::CDATA=>true],
+                "FromUserName"=>[$this->postObj->ToUserName, MXRF::CDATA=>true],
+                "CreateTime"=>time(),
+                "MsgType"=>'text',
+                "Content"=>[$Content, MXRF::CDATA=>true],
+            ];
         }else{
             //这里是取消关注，暂时不做处理
-            return "";
+            return [];
         }
     }
 

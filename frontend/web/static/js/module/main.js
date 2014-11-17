@@ -86,18 +86,18 @@ $(function(){
 		var email = $.trim($("#lEmail").val());
 		var password = $("#lPassword").val();
 		var success = true;
-		if(!myspace.reg.test(email)){
-			success = false;
-		}
+		//if(!myspace.reg.test(email)){
+		//	success = false;
+		//}
 		if(password.length < 6 || password.length > 16){
 			success = false;
 		}
 		if(success == false){
-			$('#loginForm .error').html('您的账号或密码错误请重新输入').show();
+			$('#loginForm .error').html('您的账号或密码错误请重新输入222').show();
 			return false;
 		}
 		$.ajax({
-			url : cxt+'/user/login.json',
+			url : cxt+'/site/login',
 			type : 'POST',
 			data : {
 				email : email,

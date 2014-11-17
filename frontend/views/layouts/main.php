@@ -9,7 +9,7 @@ use frontend\assets\AppAsset;
 AppAsset::register($this);
 $this->registerLinkTag([
     'rel'=>'Shortcut Icon',
-    'href'=>'/frontend/web/static/images/idarex.ico'
+    'href'=>'/static/images/idarex.ico'
 ]);
 
 $this->registerMetaTag(['charset'=>'utf-8']);
@@ -168,7 +168,9 @@ $this->registerMetaTag(['name'=>'keywords', 'content'=>'极限运动,户外运�
         </dl>
     </div>
     <!-- end #forgetPswBox -->
-    <script type="text/javascript" src="/static/js/module/index.js"></script>
+    <?php
+    $this->registerJsFile('static/js/module/index.js');
+    ?>
     <script type="text/javascript">
         $(function(){
             var data = {banner: []};
@@ -182,7 +184,6 @@ $this->registerMetaTag(['name'=>'keywords', 'content'=>'极限运动,户外运�
 
         })
     </script>
-
     <?php $this->endBody() ?>
 </body>
 </html>
