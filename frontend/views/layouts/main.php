@@ -49,10 +49,20 @@ $this->registerMetaTag(['name'=>'keywords', 'content'=>'极限运动,户外运�
                     <li class="nav"><a href="/aboutus.html">关于我们</a></li>
                 </ul>
             </nav>
-            <div class="myspace">
-                <a href="javascript:;">Be a &nbsp;<span>Xer</span></a>
-                <em class="clickme"></em>
-            </div>
+            <?php if(Yii::$app->user): ?>
+                <div class="myspace login">
+                    <a href="javascript:;"><span>Xer</span></a>
+                    <span class="name"><?= HTML::encode(Yii::$app->user->identity->username) ?></span>
+                    <input type="text" value="<?= HTML::encode(Yii::$app->user->identity->username) ?>" />
+                    <em class="clickme"></em>
+                </div>
+                </div>
+            <?php else: ?>
+                <div class="myspace">
+                    <a href="javascript:;">Be a &nbsp;<span>Xer</span></a>
+                    <em class="clickme"></em>
+                </div>
+            <?php endif; ?>
         </div>
     </header>
     <!-- end header -->
