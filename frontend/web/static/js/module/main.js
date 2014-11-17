@@ -100,8 +100,8 @@ $(function(){
 			url : cxt+'/site/login',
 			type : 'POST',
 			data : {
-				email : email,
-				password : password
+				'LoginForm[username]' : email,
+                'LoginForm[password]' : password
 			}
 		}).done(function(result) {
 			if (result.success) {

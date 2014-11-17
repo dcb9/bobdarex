@@ -18,6 +18,7 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+    public $enableCsrfValidation = false;
     /**
      * @inheritdoc
      */
@@ -72,24 +73,22 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        Yii::$app->response->format="json";
         if (!\Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return ['success'=>'1'];
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return ['success'=>'1'];
         } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
+            return ['success'=>'0'];
         }
     }
 
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
     }
 

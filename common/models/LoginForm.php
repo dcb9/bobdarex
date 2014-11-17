@@ -69,7 +69,14 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+
+            $user = User::findByUsername($this->username);
+            // 如果用户输入的不是一个用户名而是邮箱的话，那么就按邮箱的方式登录。
+            if($user===null){
+                $user = User::findByEmail($this->username);
+            }
+
+            $this->_user = $user;
         }
 
         return $this->_user;
