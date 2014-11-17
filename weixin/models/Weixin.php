@@ -11,7 +11,7 @@ namespace weixin\models;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\base\Model;
-use weixin\component\MyXmlResponseFormatter as MXRF;
+use common\component\MyXmlResponseFormatter as MXRF;
 
 class Weixin extends Model{
     const TOKEN = "bobdarex";

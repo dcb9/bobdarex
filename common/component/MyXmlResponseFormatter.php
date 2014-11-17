@@ -6,7 +6,7 @@
  * Time: 下午1:11
  */
 
-namespace weixin\component;
+namespace common\component;
 
 use yii\web\XmlResponseFormatter;
 use DOMElement;

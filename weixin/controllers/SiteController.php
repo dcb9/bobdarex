@@ -16,7 +16,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         Yii::$app->response->format = Response::FORMAT_XML;
-        Yii::$app->response->formatters = [Response::FORMAT_XML=> 'weixin\component\MyXmlResponseFormatter'];
+        Yii::$app->response->formatters = [Response::FORMAT_XML=> 'common\component\MyXmlResponseFormatter'];
 
         $model = new Weixin;
         if(!$model->checkSignature())
