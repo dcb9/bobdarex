@@ -43,7 +43,7 @@ class Weixin extends Model{
     }
 
     public function getClickEventResponseContent(){
-        $eventKey = $this->postObject->eventKey;
+        $eventKey = $this->postObject->EventKey;
         switch($eventKey){
             case self::EVENT_KEY_V1001_TODAY_MUSIC:
                 $info = "生如夏花 朴树";
