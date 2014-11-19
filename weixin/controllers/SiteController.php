@@ -28,7 +28,15 @@ class SiteController extends Controller
             $model->setPostObject($postObject);
             switch($postObject->MsgType){
                 case 'event':
-                    return $model->getWelcomeContent();
+                    switch($postObject->Event){
+                        // 自定义菜单事件
+                        case "CLICK":
+                            $model->getClickEventResponseContent();
+                            break;
+                        default:
+                            return $model->getWelcomeContent();
+                            break;
+                    }
                     break;
                 case 'text':
                 default:
