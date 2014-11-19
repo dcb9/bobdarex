@@ -31,7 +31,7 @@ class SiteController extends Controller
                     switch($postObject->Event){
                         // 自定义菜单事件
                         case "CLICK":
-                            $model->getClickEventResponseContent();
+                            return $model->getClickEventResponseContent();
                             break;
                         default:
                             return $model->getWelcomeContent();
