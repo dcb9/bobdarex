@@ -57,4 +57,13 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'creocoder/yii2-nested-set-behavior' => 
+  array (
+    'name' => 'creocoder/yii2-nested-set-behavior',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@creocoder/behaviors' => $vendorDir . '/creocoder/yii2-nested-set-behavior',
+    ),
+  ),
 );

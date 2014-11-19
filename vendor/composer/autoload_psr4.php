@@ -14,5 +14,6 @@ return array(
     'yii\\codeception\\' => array($vendorDir . '/yiisoft/yii2-codeception'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'creocoder\\behaviors\\' => array($vendorDir . '/creocoder/yii2-nested-set-behavior'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
 );
