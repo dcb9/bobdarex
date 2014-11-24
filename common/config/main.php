@@ -12,5 +12,16 @@ return [
             'password' => '2ddj*kklN',
             'charset' => 'utf8',
         ],
+        'view'=>[
+            'renderers'=> [
+                'twig'=>[
+                    'class'=>'yii\twig\ViewRenderer',
+                    'cachePath'=>'@runtime/Twig/cache',
+                    'options'=>[
+                        'auto_reload'=>true,
+                    ]
+                ]
+            ]
+        ]
     ],
 ];
