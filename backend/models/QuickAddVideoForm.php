@@ -20,4 +20,8 @@ class QuickAddVideoForm extends Model{
             [['videoUrl', 'category', 'subCategory'], 'required'],
         ];
     }
+
+    public function vid(){
+        return Youku::getVid($this->videoUrl);
+    }
 }

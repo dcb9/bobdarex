@@ -1,1 +1,10 @@
 <h2> {{ message }} </h2>
+
+<div id="youkuplayer" style="width:480px;height:400px"></div>
+<script type="text/javascript" src="http://player.youku.com/jsapi">
+    player = new YKU.Player('youkuplayer',{
+        styleid: '0',
+        client_id: '{{ youku.clientId }}',
+        vid: '{{ youku.vid }}'
+    });
+</script>
