@@ -16,7 +16,7 @@ class VideoController extends Controller {
 
     public function actionIndex(){
         $postData = ['QuickAddVideoForm'=>[
-            'videoUrl'=>'http://v.youku.com/v_show/id_XODMzNTI5Njg4.html?f=23105794&ev=2&from=y1.1-2.10001-0.1-1',
+            'videoUrl'=>'http://v.youku.com/v_show/id_XODMxNTMyNjI4.html',
             'category'=>'街头',
             'subCategory'=>'滑板'
         ]];

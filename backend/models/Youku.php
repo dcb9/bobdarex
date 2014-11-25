@@ -14,7 +14,7 @@ class Youku extends Model{
 
 
     /**
-     * http://v.youku.com/v_show/id_XODA4NjkxNDY4.html
+     *
      *
      * @param $url
      */
