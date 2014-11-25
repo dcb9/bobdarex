@@ -35,7 +35,7 @@ Vagrant 测试机的IP为： 192.168.33.10  root 密码为 vagrant 可直接通�
 
 ```
 192.168.33.10 idarex.com www.idarex.com
-192.168.33.10 weixin.idarex.com api.idarex.com
+192.168.33.10 weixin.idarex.com api.idarex.com admin.idarex.com
 ```
 这时切换hosts  推荐使用 Gas Mask 来进行线上环境和本地环境的 hosts 切换。
 
