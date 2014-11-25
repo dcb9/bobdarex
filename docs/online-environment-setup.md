@@ -38,3 +38,9 @@ bob's qcloud /var/www/html/coding.net/idarex 使用计划任务来自动更新�
 mysql root 密码为：2ddj*kklN 本地测试环境mysql root密码也改成这个了 
 grant all on bobdarex.* to idarex@'%' identified by '2ddj*kklN'
 mysql 授权： http://www.cnblogs.com/hcbin/archive/2010/04/23/1718379.html
+
+* 项目初始化
+```
+$ ./init
+select Prod
+```
